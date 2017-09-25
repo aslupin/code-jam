@@ -1,14 +1,15 @@
-def find(f,mp):
-    mp -= 1
+def find(f,p,s):
+    p -= 1
     global ans,c
     for i in range(n):
         if i==f or tbl[f][i]==11:
             continue
-        if(mp>0):
-            find(i,mp)
-        c += 1
-        ans += tbl[f][i]
-        print(f"{f} -> {i} = {tbl[f][i]}",ans)
+        if(p>0):
+            find(i,p,s+tbl[f][i])
+        else:
+            c += 1
+            ans += tbl[f][i] + s
+            print(f"{f} -> {i} = {tbl[f][i]}",ans)
 s = input()
 s = s.split()
 n = int(s[0])
@@ -36,7 +37,7 @@ for i in range(n):
                 tbl[i][j] = tbl[i][k] + tbl[k][j]
 ans = 0
 c = 0
-find(0,p)
+find(0,p,0)
 #test print
 for i in range(n):
     for j in range(n):
