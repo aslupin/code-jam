@@ -5,7 +5,7 @@ for i in range(t):
     p = 0
     while s>0:
     #    oldS = s
-        s -= int(sqrt(s))**2
+        s -= pow(int(sqrt(s)),2)
         p += 1
     #    print(" eat ",oldS-s)
     print("Case #{}: {}".format(i+1,p))
