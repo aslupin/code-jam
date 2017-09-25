@@ -1,36 +1,33 @@
 def ks(a):
-#    print(a)
-    if len(a) <= 1:
-        return a
-    b = list()
-    c = list()
-    rp = (len(a)-1)/2
-#    print(rp)
-    p = a[int(rp)]
-    for i in range(int(rp)):
-#        print("F open ",a[i])
-        if a[i]<=p:
-            b.append(a[i])
-        else:
-            c.append(a[i])
-    for i in range(int(rp)+1,len(a)):
-#        print("S open ",a[i])
-        if a[i]<=p:
-            b.append(a[i])
-        else:
-            c.append(a[i])
-    lp = [p]
-#    print("b = ",b,"\nc = ",c)
-    if len(b) != 0 and len(c) != 0:
-        global wp
-        wp = False
-    return ks(b) + lp +ks(c)
+    lenS = len(a)
+    for i in range(lenS):
+        a[i] = int(a[i])
+    b = sorted(a)
+    mn = b[0]
+    imn = 0
+    mx = b[len(b)-1]
+    imx = len(b)-1
+    px = 0
+    pn = 0
+    while a:
+        p = a.pop((len(a)-1)//2)
+#        print("cut",p)
+        if p == mx:
+            px += 1
+            imx -= 1
+            mx = b[imx]
+        elif p == mn:
+            pn += 1
+            imn += 1
+            mn = b[imn]
+    if lenS == px + pn:
+        return True
+    return False
 t = int(input())
 for i in range(t):
-    wp = True
     j = int(input())
     s = input()
-    ks(s.split())
+    wp = ks(s.split())
     if wp:
         print("Case #{}: YES".format(i+1))
     else:
