@@ -1,4 +1,6 @@
-# Status
+# Code jam 
+## [https://codejam.withgoogle.com/codejam/contest/7254486/dashboard]Kickstart Round F 2017
+## My Status
 ### A : 100%
     In old version have a full "Kicksort" way with worst recursive and stuck on big test case
 
