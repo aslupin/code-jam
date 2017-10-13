@@ -1,4 +1,4 @@
-t = int(input()) # set name your var like process's var
+t = int(input()) # set name your var like process's var #It's "team"
 for ti in range(t):
     e,n = input().split()
     e,n = int(e),int(n)
