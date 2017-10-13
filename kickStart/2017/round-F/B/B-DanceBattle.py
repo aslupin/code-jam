@@ -1,4 +1,4 @@
-t = int(input())
+t = int(input()) # set name your var like process's var
 for ti in range(t):
     e,n = input().split()
     e,n = int(e),int(n)
